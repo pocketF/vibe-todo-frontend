@@ -4,14 +4,13 @@ import './App.css'
 // 백엔드 API 기본 URL
 // .env 파일에서 환경 변수로 관리
 // Vite에서는 VITE_ 접두사가 붙은 환경 변수만 클라이언트에서 접근 가능
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api/todos'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://vibe-todo-backend-test-d2854a8f11bf.herokuapp.com/todos'
 
-// 환경 변수 확인 (개발 모드에서만 콘솔에 출력)
-if (import.meta.env.DEV) {
-  console.log('환경 변수 확인:')
-  console.log('VITE_API_BASE_URL:', import.meta.env.VITE_API_BASE_URL)
-  console.log('사용 중인 API_BASE_URL:', API_BASE_URL)
-}
+// 환경 변수 확인 (모든 환경에서 콘솔에 출력)
+console.log('환경 변수 확인:')
+console.log('VITE_API_BASE_URL:', import.meta.env.VITE_API_BASE_URL)
+console.log('사용 중인 API_BASE_URL:', API_BASE_URL)
+console.log('현재 환경:', import.meta.env.MODE)
 
 function App() {
   const [todos, setTodos] = useState([])
